@@ -1,0 +1,194 @@
+.order {
+    padding-top: 50px;
+    min-height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(45deg, $bgcolor, #C5DDE8);
+
+    &__title {
+        margin: 40px 0;
+        color: #ebb300;
+        font-weight: bold;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+
+        &__product {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &__img {
+                height: 300px;
+            }
+
+            &__price {
+                margin-top: 80px;
+                margin-bottom: 30px;
+                font-size: 30px;
+                color: grey;
+                position: relative;
+
+                &__new {
+                    position: absolute;
+                    top: -40%;
+                    left: 30%;
+                    color: red;
+                    font-weight: bold;
+                    font-size: 40px;
+                    animation: price 2s infinite ease-in-out;
+                }
+            }
+
+
+        }
+
+        &__form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &__name,
+            &__phone {
+                width: 200px;
+                border-radius: 5px;
+                cursor: pointer;
+
+                &__placeholder {
+                    cursor: pointer;
+                }
+            }
+
+            &__name:focus~&__name__placeholder,
+            &__name:not(:placeholder-shown)~&__name__placeholder,
+            &__phone:focus~&__phone__placeholder,
+            &__phone:not(:placeholder-shown)~&__phone__placeholder {
+                transform: translateY(-33px) translateX(30px) scale(0.75);
+                background-color: #f76c6c;
+                padding: 0 5px;
+            }
+
+            &__name__placeholder,
+            &__phone__placeholder {
+                transition: transform 200ms;
+                transform: translateY(-20px)
+            }
+
+            &__button {
+                width: 90%;
+                padding: 3px 0;
+                text-align: center;
+                border: 2px solid red;
+                border-radius: 15px;
+                color: red;
+                transform: scale(1.2);
+                transition-duration: 1s;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: red;
+                    color: black;
+                    border: 2px solid black;
+                    transform: scale(1.5);
+                }
+            }
+
+        }
+    }
+
+    &__timer {
+
+        &__table {
+            margin-bottom: 40px;
+
+            &__time {
+                text-align: center;
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            &__text {
+                color: black;
+                font-size: 25px;
+                font-weight: bold;
+                text-align: center;
+                padding: 10px;
+            }
+
+            &__title {
+                color: red;
+                font-size: 30px;
+                font-weight: bold;
+                text-align: center;
+
+            }
+        }
+    }
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+@keyframes price {
+    from {
+        transform: scale(1) rotate(35deg);
+
+    }
+
+    50% {
+        transform: scale(2) rotate(30deg);
+    }
+
+    to {
+        transform: scale(1) rotate(35deg);
+    }
+}
+
+@media (max-width: 1025px) {
+    .order__container {
+        width: 70%;
+    }
+}
+
+@media (max-width: 769px) {
+    .order {
+        padding-top: 0px;
+    }
+
+    .order__container__product__img {
+        height: 170px;
+    }
+}
+
+@media (max-width: 426px) {
+    .order__container {
+        width: 85%;
+    }
+
+    .order__container__product__img {
+        height: 150px;
+    }
+
+    .order__container__form__name,
+    .order__container__form__phone {
+        width: 150px;
+    }
+
+    .order__container__form__button {
+        width: 70%;
+    }
+}
+
+@media (max-width: 321px) {
+
+    .order__container__form__name,
+    .order__container__form__phone {
+        width: 120px;
+    }
+}

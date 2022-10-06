@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.center {
+    padding: 0 calc(55% - 1140px / 2);
+}
+
+@media (max-width: 1180px) and (min-width: 768px){
+    .center {
+    padding: 0 calc(45% - 736px / 2);
+    }
+}
+
+@media (max-width: 768px) {
+    .center {
+        padding: 0 calc(30% - 325px / 2);
+    }
+}           
+
+@media (max-width: 426px) {
+    .center {
+        padding: 0 calc(30% - 225px / 2);
+    }
+}           
+

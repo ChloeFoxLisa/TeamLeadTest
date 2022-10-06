@@ -1,0 +1,145 @@
+.info {
+    padding-top: 100px;
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg,
+        $color-1 $min,
+        $color-1-t $min) 0 #{$size},
+    linear-gradient(-135deg,
+        $color-1 $min,
+        $color-1-t $min) 0 #{$size},
+
+    radial-gradient(circle at #{$big-size - $min*.7} $size*1.85,
+        $color-1 $min*.85,
+        $color-1-t $min*.87) 0 -#{$size},
+    radial-gradient(circle at #{$min*.7} $size*1.85,
+        $color-1 $min*.85,
+        $color-1-t $min*.87) 0 -#{$size},
+
+
+    linear-gradient(135deg,
+        $color-2 $min,
+        $color-2-t $min) $size 0,
+    linear-gradient(-135deg,
+        $color-2 $min,
+        $color-2-t $min) $size 0,
+
+    radial-gradient(circle at #{$big-size - $min*.7} $size*1.85,
+        $color-2 $min*.85,
+        $color-2-t $min*.87) $size 0,
+    radial-gradient(circle at #{$min*.7} $size*1.85,
+        $color-2 $min*.85,
+        $color-2-t $min*.87) $size 0;
+    background-size: $big-size $big-size;
+    background-color: $bgcolor;
+    background-repeat: repeat;
+    opacity: 0.7;
+
+    color: #4d0925;
+    color: blue;
+    font-weight: bold;
+
+    &__container {
+        display: flex;
+        justify-content: space-around;
+
+        &__img {
+            height: 500px;
+        }
+
+        &__descr {
+            background-color: white;
+            font-family: 'Times New Roman', sans-serif;
+            font-size: 20px;
+            line-height: 1.5em;
+            text-align: center;
+            display: flex;
+            align-self: center;
+            width: 40%;
+            padding: 20px;
+
+            position: relative;
+            border: 2px solid $color-alpha;
+        }
+    }
+
+    &__list {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+
+        &__el {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+    }
+
+    &__button {
+        background-color: #ddd6ff;
+        margin: 50px 0;
+        align-self: center;
+        width: 500px;
+        padding: 3px 0;
+        text-align: center;
+        border: 2px solid black;
+        border-radius: 15px;
+        transition-duration: 1s;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+
+@media (max-width: 768px) and (min-width: 426px) {
+
+    .info__container__img {
+        height: 300px;
+    }
+
+    .info__container__descr{
+        font-size: 16px;
+    }
+
+    .info__list {
+        margin-top: 100px;
+    }
+
+    .info__button{
+        margin-top: 70px;
+    }
+}
+
+@media (max-width: 426px) {
+
+    .info {
+        padding-top: 40px
+    }
+
+    .info__container__img {
+        height: 400px;
+    }
+
+    .info__list__el {
+        font-size: 10px;
+    }
+
+    .info__container{
+        flex-direction: column;
+    }
+
+    .info__button{
+        width: 260px;
+    }
+
+    .info__container__descr{
+        width: 70%;
+        margin: 30px 0;
+        font-size: 16px;
+    }
+}

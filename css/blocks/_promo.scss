@@ -1,0 +1,111 @@
+.promo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    min-height: calc(100vh - 70px);
+    padding-bottom: 30px;
+
+    &__content {
+        z-index: 2;
+        color: white;
+    }
+
+    &__video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: auto;
+        opacity: 0.5;
+    }
+
+
+    &__effect {
+        position: absolute;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #ebb300;
+    }
+
+    &__container {
+        justify-content: space-around;
+        display: flex;
+        width: 100%;
+
+        &__img,
+        &__descr {
+            width: 35%;
+        }
+
+        &__descr {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            //color: #68175e;
+
+            &__img {
+                width: 100%;
+
+            }
+
+            &__button {
+                width: 90%;
+                padding: 3px 0;
+                text-align: center;
+                border: 2px solid black;
+                border-radius: 15px;
+                background-color: white;
+                transition-duration: 1s;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #ddd6ff;
+                    transform: scale(1.2);
+                }
+            }
+
+            &__list {
+
+                &__el {
+                    list-style: '▶ ';
+                    font-size: 20px;
+                    line-height: 1.5em;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 426px) {
+    .promo {
+        padding-bottom: 0;
+    }
+
+    .promo__container__descr__list__el {
+        font-size: 16px;
+    }
+
+    .promo__container__descr__button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 321px) {
+
+    .promo__container__img,
+    .promo__container__descr {
+        width: 40%;
+    }
+}
